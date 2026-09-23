@@ -293,6 +293,11 @@ volume at `/data`. [docker/docker-compose.yml](docker/docker-compose.yml) is the
 reference topology and also what `make docker` runs locally, except that the
 compose UI runs as a dev server rather than the production image.
 
+The Next.js UI can alternatively run on Vercel. This repository includes a
+root-level `vercel.json` so it can be imported directly despite the UI living
+under `packages/ui`; the stateful FastAPI service still needs a persistent
+single-instance container host. See [Deploying the UI to Vercel](docs/vercel.md).
+
 Versioned images are published to GitHub Container Registry on every release,
 so a deployment can pull instead of building:
 
